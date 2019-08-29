@@ -1,4 +1,4 @@
-require 'pry'
+require'pry'
 class Song
   attr_accessor :name, :artist_name #
   @@all = [] #
@@ -43,10 +43,12 @@ class Song
     @@all.sort_by {|each| each.name} 
   end
   
-  def self.new_from_file_name(name) 
-  
-    name.split(" - ")
-      artist = name[0]
+  def self.new_from_file_name(name)
+    array = []
+    name.split("-")
+    
+    
+  binding.pry 
   end 
   
   def self.create_from_file_name(name)
