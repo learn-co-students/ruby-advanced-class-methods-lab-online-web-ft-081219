@@ -43,16 +43,23 @@ class Song
     @@all.sort_by {|each| each.name} 
   end
   
-  def self.new_from_file_name(name)
-    array = []
-    name.split("-")
+  def self.new_from_filename(filename)
+      splitted_filename = filename.split(" - ")
+      artist_name = splitted_filename[0]
+      song_name = splitted_filename[1]
     
+      result = song_name.split(".")
+      result_song= result[0]
+      mp3 = result[1]
+      
+      song = self.create
+      song.name = result[0]
+      song.artist_name = splitted_filename[0]
+      song
+  end
+
+  def self.create_from_file_name(filename)
     
-  binding.pry 
-  end 
-  
-  def self.create_from_file_name(name)
-    name = file.new
     
   end 
   
